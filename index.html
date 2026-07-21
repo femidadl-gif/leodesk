@@ -331,18 +331,18 @@ select option{background:var(--surface2)}
 
         <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--surface2);border-radius:8px">
           <div>
-            <div style="font-weight:600;font-size:14px">☁️ Зберегти в Sheets зараз</div>
-            <div style="font-size:12px;color:var(--text-dim);margin-top:2px">Примусово записати поточні дані в Google Таблицю</div>
+            <div style="font-weight:600;font-size:14px">⬆️ Вивантажити local → хмара</div>
+            <div style="font-size:12px;color:var(--text-dim);margin-top:2px">⚠️ ЗАМІНЮЄ дані в Google Таблиці тим, що зараз відкрито тут локально</div>
           </div>
-          <button class="btn btn-gold" onclick="syncToSheets()">Зберегти</button>
+          <button class="btn btn-outline" onclick="syncToSheets()">Вивантажити</button>
         </div>
 
         <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--surface2);border-radius:8px">
           <div>
-            <div style="font-weight:600;font-size:14px">📥 Завантажити з Sheets</div>
-            <div style="font-size:12px;color:var(--text-dim);margin-top:2px">Отримати останні дані з Google Таблиці</div>
+            <div style="font-weight:600;font-size:14px">⬇️ Завантажити хмара → local</div>
+            <div style="font-size:12px;color:var(--text-dim);margin-top:2px">✅ Рекомендовано першим на новому пристрої — підтягує реальні дані з хмари</div>
           </div>
-          <button class="btn btn-outline" onclick="syncFromSheets()">Завантажити</button>
+          <button class="btn btn-gold" onclick="syncFromSheets()">Завантажити</button>
         </div>
 
         <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--surface2);border-radius:8px">
@@ -1141,11 +1141,18 @@ function setSyncStatus(loading,msg){
   if(sp)sp.style.display=loading?'block':'none';
   if(lb&&msg)lb.textContent=msg;
 }
-async function syncToSheets(){
+async function syncToSheets(force){
   if(!settings.sheetsConnected||!settings.sheetsUrl){showToast('⚠️ Спочатку підключіть Google Sheets',true);return;}
+
+  // SAFETY GUARD: refuse to overwrite cloud with empty local data unless explicitly forced
+  const localEmpty = (!S.cases||S.cases.length===0) && (!S.clients||S.clients.length===0);
+  if(localEmpty && !force){
+    const proceed = confirm('⚠️ УВАГА: у вас локально немає жодної справи чи клієнта.\n\nЯкщо продовжити — це ЗАТРЕ всі дані в Google Таблиці порожніми!\n\nСпочатку спробуйте "⬇️ Завантажити з хмари". Продовжити збереження порожніх даних?');
+    if(!proceed){ showToast('Скасовано — дані в хмарі не змінено', true); return; }
+  }
+
   setSyncStatus(true);
   try{
-    // no-cors — єдиний спосіб з локального HTML файлу
     await fetch(settings.sheetsUrl,{
       method:'POST',
       mode:'no-cors',
@@ -1153,8 +1160,8 @@ async function syncToSheets(){
       body:JSON.stringify(S)
     });
     const now=new Date().toLocaleTimeString('uk-UA',{hour:'2-digit',minute:'2-digit'});
-    setSyncStatus(false,`Збережено о ${now}`);
-    showToast('☁️ Дані збережено в Google Sheets!');
+    setSyncStatus(false,`Вивантажено о ${now}`);
+    showToast('☁️ Дані вивантажено в Google Sheets!');
   }catch(err){
     setSyncStatus(false,'Помилка збереження');
     showToast('❌ Помилка. Перевірте URL і чи опубліковано скрипт як "Всі".',true);
@@ -1190,7 +1197,10 @@ function toggleAutoSync(){
   showToast(settings.autoSync?'✅ Автосинхронізацію увімкнено':'Автосинхронізацію вимкнено');
 }
 function maybeAutoSync(){
-  if(settings.sheetsConnected&&settings.autoSync)syncToSheets();
+  if(!settings.sheetsConnected||!settings.autoSync) return;
+  const localEmpty = (!S.cases||S.cases.length===0) && (!S.clients||S.clients.length===0);
+  if(localEmpty) return; // never silently push empty data to the cloud
+  syncToSheets(true); // already-loaded local data with content — safe to auto-push
 }
 function copyScript(){
   const code=document.getElementById('script-code').textContent;
