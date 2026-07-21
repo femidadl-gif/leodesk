@@ -145,7 +145,7 @@ select option{background:var(--surface2)}
 </style>
 </head>
 <body>
- 
+
 <div class="sidebar">
   <div class="logo">
     <div class="logo-title">⚖️ Dudin Lex Desk</div>
@@ -171,7 +171,7 @@ select option{background:var(--surface2)}
   </nav>
   <div class="sidebar-footer" id="sidebar-footer">Дані зберігаються локально</div>
 </div>
- 
+
 <div class="main">
   <!-- DASHBOARD -->
   <div id="page-dashboard" class="page active">
@@ -193,7 +193,7 @@ select option{background:var(--surface2)}
       <table><thead><tr><th>№</th><th>Клієнт</th><th>Назва</th><th>Статус</th></tr></thead><tbody id="dash-cases"></tbody></table>
     </div>
   </div>
- 
+
   <!-- CASES -->
   <div id="page-cases" class="page">
     <div class="page-title">Справи</div>
@@ -209,7 +209,7 @@ select option{background:var(--surface2)}
       <table><thead><tr><th>№ справи</th><th>Клієнт</th><th>Назва</th><th>Категорія</th><th>Суд</th><th>Статус</th><th></th></tr></thead><tbody id="cases-table"></tbody></table>
     </div>
   </div>
- 
+
   <!-- CLIENTS -->
   <div id="page-clients" class="page">
     <div class="page-title">Клієнти</div>
@@ -225,7 +225,7 @@ select option{background:var(--surface2)}
       <table><thead><tr><th>ПІБ</th><th>Телефон</th><th>Email</th><th>Тип</th><th>Справ</th><th>Нотатки</th><th></th></tr></thead><tbody id="clients-table"></tbody></table>
     </div>
   </div>
- 
+
   <!-- CALENDAR -->
   <div id="page-calendar" class="page">
     <div class="page-title">Календар</div>
@@ -245,7 +245,7 @@ select option{background:var(--surface2)}
       <table><thead><tr><th>Дата</th><th>Залишилось</th><th>Час</th><th>Подія</th><th>Справа</th><th>Тип</th><th></th></tr></thead><tbody id="events-table"></tbody></table>
     </div>
   </div>
- 
+
   <!-- FINANCE -->
   <div id="page-finance" class="page">
     <div class="page-title">Фінанси</div>
@@ -263,12 +263,12 @@ select option{background:var(--surface2)}
       <table><thead><tr><th>Дата</th><th>Клієнт</th><th>Справа</th><th>Опис</th><th>Сума</th><th>Статус</th><th></th></tr></thead><tbody id="finance-table"></tbody></table>
     </div>
   </div>
- 
+
   <!-- NOTIFICATIONS -->
   <div id="page-notifications" class="page">
     <div class="page-title">🔔 Нагадування</div>
     <div class="page-sub">Дедлайни та майбутні події</div>
- 
+
     <div class="notif-settings">
       <h3>Налаштування сповіщень</h3>
       <div class="setting-row">
@@ -287,15 +287,15 @@ select option{background:var(--surface2)}
         <button class="btn btn-gold" onclick="checkAndNotify()">🔔 Перевірити зараз</button>
       </div>
     </div>
- 
+
     <div id="notif-list"></div>
   </div>
- 
+
   <!-- GOOGLE SHEETS SYNC -->
   <div id="page-drive" class="page">
     <div class="page-title">☁️ Google Sheets синхронізація</div>
     <div class="page-sub">Дані зберігаються у твоїй Google Таблиці — доступно з будь-якого пристрою</div>
- 
+
     <!-- STATUS -->
     <div class="drive-status" id="sync-status-bar">
       <div class="drive-dot" id="drive-dot"></div>
@@ -306,7 +306,7 @@ select option{background:var(--surface2)}
       <div id="sync-spinner" style="display:none;font-size:13px;color:var(--text-dim)">⏳ Синхронізація...</div>
       <span id="sync-last" style="font-size:11px;color:var(--text-dim)"></span>
     </div>
- 
+
     <!-- URL INPUT -->
     <div class="section">
       <div class="section-header"><div class="section-title">🔗 URL Google Apps Script</div></div>
@@ -323,12 +323,12 @@ select option{background:var(--surface2)}
         <div id="url-error" style="font-size:12px;color:var(--red);margin-top:8px;display:none"></div>
       </div>
     </div>
- 
+
     <!-- ACTIONS -->
     <div class="section">
       <div class="section-header"><div class="section-title">Керування даними</div></div>
       <div style="padding:20px;display:flex;flex-direction:column;gap:10px">
- 
+
         <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--surface2);border-radius:8px">
           <div>
             <div style="font-weight:600;font-size:14px">☁️ Зберегти в Sheets зараз</div>
@@ -336,7 +336,7 @@ select option{background:var(--surface2)}
           </div>
           <button class="btn btn-gold" onclick="syncToSheets()">Зберегти</button>
         </div>
- 
+
         <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--surface2);border-radius:8px">
           <div>
             <div style="font-weight:600;font-size:14px">📥 Завантажити з Sheets</div>
@@ -344,7 +344,7 @@ select option{background:var(--surface2)}
           </div>
           <button class="btn btn-outline" onclick="syncFromSheets()">Завантажити</button>
         </div>
- 
+
         <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--surface2);border-radius:8px">
           <div>
             <div style="font-weight:600;font-size:14px">📊 Експорт Excel</div>
@@ -352,7 +352,7 @@ select option{background:var(--surface2)}
           </div>
           <button class="btn btn-green" onclick="exportExcel('all')">Завантажити</button>
         </div>
- 
+
         <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--surface2);border-radius:8px">
           <div>
             <div style="font-weight:600;font-size:14px">📥 Імпорт клієнтів з Excel</div>
@@ -361,7 +361,7 @@ select option{background:var(--surface2)}
           <button class="btn btn-outline" onclick="document.getElementById('import-clients-file').click()">Обрати файл</button>
           <input type="file" id="import-clients-file" accept=".xlsx,.xls" style="display:none" onchange="importFromExcel(this,'clients')">
         </div>
- 
+
         <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--surface2);border-radius:8px">
           <div>
             <div style="font-weight:600;font-size:14px">📥 Імпорт справ з Excel</div>
@@ -370,7 +370,7 @@ select option{background:var(--surface2)}
           <button class="btn btn-outline" onclick="document.getElementById('import-cases-file').click()">Обрати файл</button>
           <input type="file" id="import-cases-file" accept=".xlsx,.xls" style="display:none" onchange="importFromExcel(this,'cases')">
         </div>
- 
+
         <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--surface2);border-radius:8px">
           <div>
             <div style="font-weight:600;font-size:14px">📥 Імпорт платежів з Excel</div>
@@ -379,7 +379,7 @@ select option{background:var(--surface2)}
           <button class="btn btn-outline" onclick="document.getElementById('import-payments-file').click()">Обрати файл</button>
           <input type="file" id="import-payments-file" accept=".xlsx,.xls" style="display:none" onchange="importFromExcel(this,'payments')">
         </div>
- 
+
         <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--surface2);border-radius:8px">
           <div>
             <div style="font-weight:600;font-size:14px">💾 Локальна резервна копія</div>
@@ -390,10 +390,10 @@ select option{background:var(--surface2)}
             <button class="btn btn-outline" onclick="driveRestore()">Відновити</button>
           </div>
         </div>
- 
+
       </div>
     </div>
- 
+
     <!-- AUTO SYNC SETTING -->
     <div class="notif-settings">
       <h3>Налаштування автосинхронізації</h3>
@@ -403,7 +403,7 @@ select option{background:var(--surface2)}
       </div>
       <div style="font-size:12px;color:var(--text-dim);margin-top:4px">Коли увімкнено — дані автоматично записуються в Sheets після кожного додавання або видалення</div>
     </div>
- 
+
     <!-- INSTRUCTIONS -->
     <div class="section">
       <div class="section-header"><div class="section-title">📋 Як отримати URL скрипту</div></div>
@@ -430,7 +430,7 @@ select option{background:var(--surface2)}
             <span>Скопіюй <strong>URL веб-застосунку</strong> і встав вище</span>
           </div>
         </div>
- 
+
         <div style="margin-top:18px;background:var(--surface2);border-radius:8px;padding:14px;border:1px solid var(--border)">
           <div style="font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px">Код для скрипту (скопіюй повністю)</div>
           <pre id="script-code" style="font-family:monospace;font-size:12px;color:var(--text);white-space:pre-wrap;line-height:1.6">function doPost(e) {
@@ -463,18 +463,18 @@ function doGet(e) {
       </div>
     </div>
   </div>
- 
+
   <!-- ANALYTICS -->
   <div id="page-analytics" class="page">
     <div class="page-title">📈 Фінансова аналітика</div>
     <div class="page-sub">Доходи, справи та загальна картина</div>
- 
+
     <!-- TOP STATS -->
     <div id="an-stats" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px"></div>
- 
+
     <!-- CHARTS ROW -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
- 
+
       <!-- Monthly income chart -->
       <div class="section">
         <div class="section-header"><div class="section-title">Дохід по місяцях</div>
@@ -482,7 +482,7 @@ function doGet(e) {
         </div>
         <div style="padding:16px"><canvas id="chart-monthly" height="200"></canvas></div>
       </div>
- 
+
       <!-- Category pie -->
       <div class="section">
         <div class="section-header"><div class="section-title">Справи по категоріях</div></div>
@@ -492,9 +492,9 @@ function doGet(e) {
         </div>
       </div>
     </div>
- 
+
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
- 
+
       <!-- Payment status -->
       <div class="section">
         <div class="section-header"><div class="section-title">Стан платежів</div></div>
@@ -503,14 +503,14 @@ function doGet(e) {
           <div id="chart-payments-legend" style="flex:1;font-size:12px"></div>
         </div>
       </div>
- 
+
       <!-- Top clients -->
       <div class="section">
         <div class="section-header"><div class="section-title">Топ клієнти по доходу</div></div>
         <div id="an-top-clients" style="padding:4px 0"></div>
       </div>
     </div>
- 
+
     <!-- Monthly table -->
     <div class="section">
       <div class="section-header"><div class="section-title">Деталізація по місяцях</div></div>
@@ -518,17 +518,17 @@ function doGet(e) {
       <tbody id="an-monthly-table"></tbody></table>
     </div>
   </div>
- 
+
   <!-- DOCS -->
   <div id="page-docs" class="page">
     <div class="page-title">📄 Документи</div>
     <div class="page-sub">Шаблони та генерація документів</div>
- 
+
     <div style="display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap">
       <button class="btn btn-gold" onclick="openModal('template')">+ Новий шаблон</button>
       <button class="btn btn-outline" onclick="openModal('gendoc')">&#9889; Згенерувати документ</button>
     </div>
- 
+
     <div class="section">
       <div class="section-header">
         <div class="section-title">Шаблони</div>
@@ -536,7 +536,7 @@ function doGet(e) {
       </div>
       <div id="tpl-list" style="padding:4px 0"></div>
     </div>
- 
+
     <div class="section" id="doc-preview-section" style="display:none">
       <div class="section-header">
         <div class="section-title">&#128203; Попередній перегляд</div>
@@ -549,9 +549,9 @@ function doGet(e) {
       <pre id="doc-preview" style="padding:24px;font-family:inherit;font-size:13px;line-height:1.8;white-space:pre-wrap;color:var(--text);background:var(--surface)"></pre>
     </div>
   </div>
- 
+
 </div>
- 
+
 <!-- MODALS -->
 <div class="modal-overlay" id="modal-overlay" onclick="if(event.target===this)closeModal()">
   <div class="modal" id="modal-case" style="display:none">
@@ -578,7 +578,7 @@ function doGet(e) {
     </div>
     <div class="modal-actions"><button class="btn btn-outline" onclick="closeModal()">Скасувати</button><button class="btn btn-gold" onclick="saveCase()">Зберегти</button></div>
   </div>
- 
+
   <div class="modal" id="modal-client" style="display:none">
     <div class="modal-title">👤 Новий клієнт</div>
     <div class="form-grid">
@@ -592,7 +592,7 @@ function doGet(e) {
     </div>
     <div class="modal-actions"><button class="btn btn-outline" onclick="closeModal()">Скасувати</button><button class="btn btn-gold" onclick="saveClient()">Зберегти</button></div>
   </div>
- 
+
   <div class="modal" id="modal-event" style="display:none">
     <div class="modal-title">📅 Нова подія</div>
     <div class="form-grid">
@@ -605,7 +605,7 @@ function doGet(e) {
     </div>
     <div class="modal-actions"><button class="btn btn-outline" onclick="closeModal()">Скасувати</button><button class="btn btn-gold" onclick="saveEvent()">Зберегти</button></div>
   </div>
- 
+
   <div class="modal" id="modal-payment" style="display:none">
     <div class="modal-title">₴ Новий платіж</div>
     <div class="form-grid">
@@ -618,7 +618,7 @@ function doGet(e) {
     </div>
     <div class="modal-actions"><button class="btn btn-outline" onclick="closeModal()">Скасувати</button><button class="btn btn-gold" onclick="savePayment()">Зберегти</button></div>
   </div>
- 
+
   <!-- TEMPLATE MODAL -->
   <div class="modal" id="modal-template" style="display:none">
     <div class="modal-title">📄 Новий шаблон</div>
@@ -640,9 +640,9 @@ function doGet(e) {
           <code style="background:var(--surface2);padding:1px 5px;border-radius:4px">{{ДАТА}}</code>
         </div>
         <textarea id="tpl-body" style="min-height:260px;font-family:monospace;font-size:12px" placeholder="ДОГОВІР ПРО НАДАННЯ ПРАВОВОЇ ДОПОМОГИ
- 
+
 м. Вінниця, {{ДАТА}}
- 
+
 Адвокат __________, з однієї сторони, та
 {{ПІБ}}, РНОКПП {{РНОКПП}}, що проживає за адресою: {{АДРЕСА}},
 з іншої сторони, уклали цей Договір про наступне..."></textarea>
@@ -653,7 +653,7 @@ function doGet(e) {
       <button class="btn btn-gold" onclick="saveTemplate()">Зберегти</button>
     </div>
   </div>
- 
+
   <!-- GENERATE DOC MODAL -->
   <div class="modal" id="modal-gendoc" style="display:none">
     <div class="modal-title">⚡ Згенерувати документ</div>
@@ -668,7 +668,7 @@ function doGet(e) {
       <button class="btn btn-gold" onclick="generateDoc()">⚡ Згенерувати</button>
     </div>
   </div>
- 
+
   <!-- CASE DETAIL MODAL -->
   <div class="modal case-detail-modal" id="modal-case-detail" style="display:none">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
@@ -676,11 +676,11 @@ function doGet(e) {
       <button class="icon-del" onclick="closeModal()" style="font-size:20px">✕</button>
     </div>
     <div style="font-size:12px;color:var(--text-dim);margin-bottom:20px" id="cd-meta"></div>
- 
+
     <!-- STEPS -->
     <div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:var(--text-dim);margin-bottom:8px">Прогрес справи</div>
     <div id="cd-steps"></div>
- 
+
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px">
       <!-- JOURNAL -->
       <div>
@@ -700,7 +700,7 @@ function doGet(e) {
         </div>
         <div id="cd-journal" style="max-height:300px;overflow-y:auto;background:var(--surface2);border-radius:8px;border:1px solid var(--border)"></div>
       </div>
- 
+
       <!-- INFO -->
       <div>
         <div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:var(--text-dim);margin-bottom:12px">Інформація</div>
@@ -709,14 +709,14 @@ function doGet(e) {
           <div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:var(--text-dim);margin-bottom:8px">Найближчі події</div>
           <div id="cd-events" style="background:var(--surface2);border-radius:8px;border:1px solid var(--border);padding:4px 0;font-size:13px"></div>
         </div>
- 
+
         <!-- DOCUMENTS -->
         <div style="margin-top:14px">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
             <div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:var(--text-dim)">📎 Документи</div>
             <button class="btn btn-outline" style="font-size:11px;padding:4px 10px" onclick="toggleDocForm()">+ Додати</button>
           </div>
- 
+
           <div id="cd-doc-form" style="display:none;background:var(--surface2);border-radius:8px;padding:12px;margin-bottom:8px;border:1px solid var(--border)">
             <div style="display:flex;flex-direction:column;gap:8px">
               <input id="doc-name" placeholder="Назва документу (напр. Позовна заява.pdf)"
@@ -736,13 +736,13 @@ function doGet(e) {
               </div>
             </div>
           </div>
- 
+
           <div id="cd-docs" style="background:var(--surface2);border-radius:8px;border:1px solid var(--border)"></div>
         </div>
       </div>
     </div>
   </div>
- 
+
   <!-- EDIT CASE MODAL -->
   <div class="modal" id="modal-edit-case" style="display:none">
     <div class="modal-title">✏️ Редагувати справу</div>
@@ -773,7 +773,7 @@ function doGet(e) {
       <button class="btn btn-gold" onclick="saveEditCase()">Зберегти</button>
     </div>
   </div>
- 
+
   <!-- EDIT CLIENT MODAL -->
   <div class="modal" id="modal-edit-client" style="display:none">
     <div class="modal-title">✏️ Редагувати клієнта</div>
@@ -793,7 +793,7 @@ function doGet(e) {
       <button class="btn btn-gold" onclick="saveEditClient()">Зберегти</button>
     </div>
   </div>
- 
+
   <div class="modal" id="modal-restore" style="display:none">
     <div class="modal-title">📥 Відновити дані</div>
     <p style="color:var(--text-dim);font-size:13px;margin-bottom:16px">Оберіть JSON файл резервної копії LexDesk:</p>
@@ -802,16 +802,16 @@ function doGet(e) {
     <div class="modal-actions"><button class="btn btn-outline" onclick="closeModal()">Скасувати</button><button class="btn btn-red" onclick="doRestore()">Відновити</button></div>
   </div>
 </div>
- 
+
 <div class="toast" id="toast"></div>
- 
+
 <script>
 const KEY='lexdesk_v2';
 const SKEY='lexdesk_settings';
 let S={cases:[],clients:[],events:[],payments:[]};
 let settings={pushEnabled:false,days:3,urgent:1,sheetsUrl:'https://script.google.com/macros/s/AKfycbweCq1KOZ9-HG4SGmhF65YncyEk0sdgHX_gNgqjMkVV8EP6kZmkfRwXHdpDVBolihY/exec',sheetsConnected:true,autoSync:true};
 let calM,calY,driveToken=null;
- 
+
 function load(){
   try{const d=JSON.parse(localStorage.getItem(KEY)||'{}');S={...S,...d};}catch(e){}
   try{const s=JSON.parse(localStorage.getItem(SKEY)||'{}');settings={...settings,...s};}catch(e){}
@@ -845,13 +845,13 @@ function daysLeftBadge(d){
   if(d<=settings.days)return`<span class="badge b-soon">${d} дн.</span>`;
   return`<span style="font-size:12px;color:var(--text-dim)">${d} дн.</span>`;
 }
- 
+
 function showToast(m,err){
   const t=document.getElementById('toast');
   t.textContent=m;t.className='toast'+(err?' error':'');
   t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);
 }
- 
+
 // NAV
 function goTo(p){
   document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
@@ -864,7 +864,7 @@ function goTo(p){
   // force render on next frame so DOM is ready
   requestAnimationFrame(()=>{ renders[p]?.(); });
 }
- 
+
 // NOTIFICATIONS count badge
 function updateNotifBadge(){
   const t=td();
@@ -874,7 +874,7 @@ function updateNotifBadge(){
   if(old)old.remove();
   if(urgent>0){const b=document.createElement('span');b.className='nav-badge';b.textContent=urgent;el.appendChild(b);}
 }
- 
+
 // DASHBOARD
 function renderDashboard(){
   const t=td();
@@ -884,7 +884,7 @@ function renderDashboard(){
   document.getElementById('st-events').textContent=S.events.filter(e=>e.date===t).length;
   const up=S.payments.filter(p=>p.status==='Не оплачено').reduce((s,p)=>s+(+p.amount||0),0);
   document.getElementById('st-unpaid').textContent=fmt(up)+'₴';
- 
+
   // alert strip
   const alertEvs=S.events.filter(e=>{const d=daysLeft(e.date);return d!==null&&d>=0&&d<=settings.days;}).sort((a,b)=>a.date.localeCompare(b.date));
   const alertsEl=document.getElementById('dash-alerts');
@@ -894,14 +894,14 @@ function renderDashboard(){
       ${alertEvs.map(e=>{const d=daysLeft(e.date);return`<div style="font-size:13px;margin-top:4px;color:var(--text-mid)">• <strong>${e.name}</strong> — ${d===0?'<span style="color:var(--red)">сьогодні</span>':`<span style="color:var(--gold)">${d} дн.</span>`} (${fmtD(e.date)})</div>`;}).join('')}
     </div>`;
   }else alertsEl.innerHTML='';
- 
+
   const evs=S.events.filter(e=>e.date>=t).sort((a,b)=>a.date.localeCompare(b.date)).slice(0,5);
   document.getElementById('dash-events').innerHTML=evs.length?evs.map(e=>{
     const c=S.cases.find(x=>x.id===e.caseId);
     const d=daysLeft(e.date);
     return`<tr><td>${fmtD(e.date)}</td><td>${daysLeftBadge(d)}</td><td>${e.name}</td><td style="font-size:12px;color:var(--text-dim)">${c?c.name:'—'}</td><td>${badge(e.type==='Дедлайн'?'urgent':'hearing',e.type)}</td></tr>`;
   }).join(''):empty(5,'Найближчих подій немає');
- 
+
   const cs=[...S.cases].reverse().slice(0,5);
   document.getElementById('dash-cases').innerHTML=cs.length?cs.map(c=>{
     const cl=S.clients.find(x=>x.id===c.clientId);
@@ -910,7 +910,7 @@ function renderDashboard(){
   }).join(''):empty(4,'Справ немає');
   updateNotifBadge();
 }
- 
+
 // CASES
 function renderCases(){
   const q=(document.getElementById('cases-search')?.value||'').toLowerCase();
@@ -921,7 +921,7 @@ function renderCases(){
     return`<tr><td style="color:var(--text-dim);font-size:12px">${c.num}</td><td>${cl?cl.name:'—'}</td><td><strong>${c.name}</strong></td><td style="font-size:12px;color:var(--text-dim)">${c.cat}</td><td style="font-size:12px">${c.court||'—'}</td><td>${badge(st,c.status)}</td><td><div style="display:flex;gap:6px"><button class="btn btn-outline" style="font-size:11px;padding:4px 10px" onclick="openCaseDetail('${c.id}')">📋 Деталі</button><button class="btn btn-outline" style="font-size:11px;padding:4px 10px" onclick="openEditCase('${c.id}')">✏️ Редагувати</button><button class="icon-del" onclick="del('case','${c.id}')">🗑</button></div></td></tr>`;
   }).join(''):empty(7,'Справ немає. Додайте першу!');
 }
- 
+
 // CLIENTS
 function renderClients(){
   const q=(document.getElementById('clients-search')?.value||'').toLowerCase();
@@ -931,7 +931,7 @@ function renderClients(){
     return`<tr><td><strong>${c.name}</strong></td><td>${c.phone||'—'}</td><td style="font-size:12px">${c.email||'—'}</td><td style="font-size:12px">${c.type||'—'}</td><td style="text-align:center">${cnt}</td><td style="font-size:12px;color:var(--text-dim);max-width:140px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${c.notes||'—'}</td><td><div style="display:flex;gap:6px"><button class="btn btn-outline" style="font-size:11px;padding:4px 10px" onclick="openEditClient('${c.id}')">✏️ Редагувати</button><button class="icon-del" onclick="del('client','${c.id}')">🗑</button></div></td></tr>`;
   }).join(''):empty(7,'Клієнтів немає. Додайте першого!');
 }
- 
+
 // CALENDAR
 function renderCalendar(){
   const MONTHS=['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'];
@@ -941,14 +941,14 @@ function renderCalendar(){
   const offset=(firstDay+6)%7; // Mon=0
   const t=td();
   const dn=['Пн','Вт','Ср','Чт','Пт','Сб','Нд'];
- 
+
   let html=dn.map(d=>`<div class="cal-head">${d}</div>`).join('');
- 
+
   // empty cells before first day
   for(let i=0;i<offset;i++){
     html+=`<div class="cal-cell cal-empty"></div>`;
   }
- 
+
   // day cells
   for(let d=1;d<=days;d++){
     const ds=`${calY}-${String(calM+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
@@ -961,9 +961,9 @@ function renderCalendar(){
       ${evHtml}
     </div>`;
   }
- 
+
   document.getElementById('cal-grid').innerHTML=html;
- 
+
   // make cells square
   requestAnimationFrame(()=>{
     const grid=document.getElementById('cal-grid');
@@ -973,7 +973,7 @@ function renderCalendar(){
     const w=cells[0].offsetWidth;
     cells.forEach(c=>c.style.height=w+'px');
   });
- 
+
   // events list
   const sorted=[...S.events].sort((a,b)=>a.date.localeCompare(b.date));
   document.getElementById('events-table').innerHTML=sorted.length?sorted.map(e=>{
@@ -982,9 +982,9 @@ function renderCalendar(){
     return`<tr><td>${fmtD(e.date)}</td><td>${daysLeftBadge(d)}</td><td style="font-size:12px">${e.time||'—'}</td><td><strong>${e.name}</strong></td><td style="font-size:12px;color:var(--text-dim)">${c?c.name:'—'}</td><td>${badge(e.type==='Дедлайн'?'urgent':'hearing',e.type)}</td><td><button class="icon-del" onclick="del('event','${e.id}')">🗑</button></td></tr>`;
   }).join(''):empty(7,'Подій немає');
 }
- 
+
 function changeMonth(dir){calM+=dir;if(calM>11){calM=0;calY++;}if(calM<0){calM=11;calY--;}renderCalendar();}
- 
+
 // FINANCE
 function renderFinance(){
   const total=S.payments.reduce((s,p)=>s+(+p.amount||0),0);
@@ -998,14 +998,14 @@ function renderFinance(){
     return`<tr><td>${fmtD(p.date)}</td><td>${cl?cl.name:'—'}</td><td style="font-size:12px;color:var(--text-dim)">${c?c.name:'—'}</td><td>${p.desc||'—'}</td><td style="font-family:'Inter','ui-sans-serif','system-ui',sans-serif;font-weight:600;letter-spacing:-0.3px;font-size:15px;color:var(--gold)">${fmt(p.amount)}₴</td><td>${badge(p.status==='Оплачено'?'paid':'unpaid',p.status)}</td><td><button class="icon-del" onclick="del('payment','${p.id}')">🗑</button></td></tr>`;
   }).join(''):empty(7,'Платежів немає');
 }
- 
+
 // NOTIFICATIONS
 function renderNotifications(){
   const t=td();
   const allEvs=S.events.map(e=>({...e,days:daysLeft(e.date)})).sort((a,b)=>(a.days??999)-(b.days??999));
   const upcoming=allEvs.filter(e=>e.days!==null&&e.days>=0);
   const past=allEvs.filter(e=>e.days!==null&&e.days<0);
- 
+
   let html='';
   if(!upcoming.length&&!past.length){
     html=`<div style="text-align:center;color:var(--text-dim);padding:40px;font-size:14px">📅 Подій немає. Додайте події в Календарі.</div>`;
@@ -1044,7 +1044,7 @@ function renderNotifications(){
   document.getElementById('notif-list').innerHTML=html;
   updateNotifBadge();
 }
- 
+
 // PUSH NOTIFICATIONS
 function togglePush(){
   const cb=document.getElementById('toggle-push');
@@ -1070,12 +1070,12 @@ function checkAndNotify(){
   showToast(`🔔 ${urgent.length} подія(й) наближається!`);
   renderNotifications();
 }
- 
+
 // EXCEL EXPORT
 function exportExcel(type){
   const wb=XLSX.utils.book_new();
   const fmtDate2=d=>d?new Date(d+'T00:00:00').toLocaleDateString('uk-UA'):'';
- 
+
   if(type==='cases'||type==='all'){
     const data=[['№ справи','Клієнт','Назва','Категорія','Суд','Статус','Дата відкриття','Нотатки'],
       ...S.cases.map(c=>{const cl=S.clients.find(x=>x.id===c.clientId);return[c.num,cl?cl.name:'',c.name,c.cat,c.court||'',c.status,fmtDate2(c.date),c.notes||''];})];
@@ -1103,7 +1103,7 @@ function exportExcel(type){
   XLSX.writeFile(wb,`${name}_${td()}.xlsx`);
   showToast('📊 Excel файл завантажено!');
 }
- 
+
 // ── GOOGLE SHEETS SYNC ──────────────────────────────────────
 function connectSheets(){
   const url=document.getElementById('sheets-url').value.trim();
@@ -1196,7 +1196,7 @@ function copyScript(){
   const code=document.getElementById('script-code').textContent;
   navigator.clipboard.writeText(code).then(()=>showToast('📋 Код скопійовано!')).catch(()=>showToast('Виділіть і скопіюйте вручну'));
 }
- 
+
 // DRIVE LOCAL BACKUP
 function saveSettings2(){try{localStorage.setItem(SKEY,JSON.stringify(settings));}catch(e){}}
 function driveBackup(){
@@ -1221,7 +1221,7 @@ function doRestore(){
     }catch(err){showToast('❌ Невірний формат файлу',true);}
   };r.readAsText(f);
 }
- 
+
 // MODAL
 function openModal(type){
   document.getElementById('modal-overlay').classList.add('open');
@@ -1261,11 +1261,11 @@ function openModal(type){
 }
 function closeModal(){document.getElementById('modal-overlay').classList.remove('open');}
 function g(id){return document.getElementById(id).value.trim();}
- 
+
 function saveCase(){
   const name=g('c-name');if(!name){showToast('⚠️ Введіть назву справи',true);return;}
   const num=g('c-num')||`${new Date().getFullYear()}-${String(S.cases.length+1).padStart(3,'0')}`;
- 
+
   // handle new client if typed
   let clientId = g('c-client');
   const newClientName = g('c-client-new');
@@ -1279,11 +1279,11 @@ function saveCase(){
       clientId = newCl.id;
     }
   }
- 
+
   S.cases.push({id:uid(),num,name,clientId,cat:g('c-cat'),court:g('c-court'),status:g('c-status'),date:g('c-date'),notes:g('c-notes'),step:'consult',journal:[],docs:[]});
   save();closeModal();renderCases();renderClients();renderDashboard();showToast('✅ Справу збережено');maybeAutoSync();
 }
- 
+
 function handleClientSelect(sel){
   if(sel.value){
     document.getElementById('c-client-new').value='';
@@ -1317,119 +1317,119 @@ function del(type,id){
   if(active){const renders={dashboard:renderDashboard,cases:renderCases,clients:renderClients,calendar:renderCalendar,finance:renderFinance,notifications:renderNotifications};renders[active]?.();}
   updateNotifBadge();
 }
- 
+
 // ── DOCUMENTS ────────────────────────────────────────────────
 const DEFAULT_TEMPLATES = [
   {
     id:'tpl-contract', name:'Договір про правову допомогу', cat:'Договір',
     body:`ДОГОВІР ПРО НАДАННЯ ПРАВОВОЇ ДОПОМОГИ
- 
+
 м. Вінниця, {{ДАТА}}
- 
+
 Адвокат ________________________, посвідчення адвоката №___,
 з однієї сторони (далі — Адвокат), та
 {{ПІБ}}, РНОКПП {{РНОКПП}},
 адреса: {{АДРЕСА}}, тел.: {{ТЕЛЕФОН}},
 з іншої сторони (далі — Клієнт),
- 
+
 уклали цей Договір про наступне:
- 
+
 1. ПРЕДМЕТ ДОГОВОРУ
 1.1. Адвокат зобов'язується надати Клієнту правову допомогу у справі: {{СПРАВА}}.
- 
+
 2. ПРАВА ТА ОБОВ'ЯЗКИ СТОРІН
 2.1. Адвокат зобов'язується добросовісно виконувати доручення Клієнта.
 2.2. Клієнт зобов'язується надавати необхідні документи та інформацію.
- 
+
 3. ОПЛАТА ПОСЛУГ
 3.1. Вартість послуг визначається додатковою угодою.
- 
+
 4. КОНФІДЕНЦІЙНІСТЬ
 4.1. Адвокат зобов'язується зберігати адвокатську таємницю.
- 
+
 5. СТРОК ДІЇ ДОГОВОРУ
 5.1. Договір набирає чинності з дня підписання.
- 
+
 Адвокат: _________________      Клієнт: _________________`
   },
   {
     id:'tpl-poa', name:'Довіреність', cat:'Довіреність',
     body:`ДОВІРЕНІСТЬ
- 
+
 м. Вінниця, {{ДАТА}}
- 
+
 Я, {{ПІБ}}, РНОКПП {{РНОКПП}},
 адреса: {{АДРЕСА}},
- 
+
 цією довіреністю уповноважую адвоката _______________________
 представляти мої інтереси у справі: {{СПРАВА}},
 у {{СУД}} та інших органах,
 з правом підписання документів, подання заяв та клопотань.
- 
+
 Довіреність видана строком на один рік.
- 
+
 Довіритель: _________________      /__________________/`
   },
   {
     id:'tpl-claim', name:'Позовна заява', cat:'Позов',
     body:`До {{СУД}}
- 
+
 Позивач: {{ПІБ}}
 РНОКПП: {{РНОКПП}}
 Адреса: {{АДРЕСА}}
 Тел.: {{ТЕЛЕФОН}}
- 
+
 Відповідач: _______________________________
 Адреса: __________________________________
- 
+
 ПОЗОВНА ЗАЯВА
- 
+
 {{ДАТА}}
- 
+
 Я, {{ПІБ}}, звертаюсь до суду з позовом щодо:
 {{СПРАВА}}
- 
+
 ОБСТАВИНИ СПРАВИ:
 [Викладіть обставини справи]
- 
+
 ПРАВОВЕ ОБГРУНТУВАННЯ:
 [Вкажіть норми права]
- 
+
 ПРОШУ СУД:
 1. [Вимога 1]
 2. [Вимога 2]
- 
+
 Додатки:
 1. Копія паспорту
 2. Докази по справі
- 
+
 {{ПІБ}}                    {{ДАТА}}`
   }
 ];
- 
+
 function initTemplates(){
   if(!S.templates){
     S.templates=DEFAULT_TEMPLATES;
     save();
   }
 }
- 
+
 function renderDocs(){
   initTemplates();
   const list=document.getElementById('tpl-list');
   const count=document.getElementById('tpl-count');
   if(count)count.textContent=`${S.templates.length} шаблонів`;
- 
+
   if(!S.templates.length){
     list.innerHTML=`<div style="text-align:center;color:var(--text-dim);padding:32px">Шаблонів немає. Додайте перший!</div>`;
     return;
   }
- 
+
   const catColors={
     'Договір':'var(--blue)','Позов':'var(--red)','Довіреність':'var(--gold)',
     'Заява':'var(--green)','Клопотання':'var(--text-mid)','Скарга':'var(--red)','Інше':'var(--text-dim)'
   };
- 
+
   list.innerHTML=S.templates.map(t=>`
     <div style="display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid var(--border)">
       <div style="width:36px;height:36px;border-radius:8px;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">📄</div>
@@ -1445,7 +1445,7 @@ function renderDocs(){
     </div>
   `).join('');
 }
- 
+
 function saveTemplate(){
   initTemplates();
   const name=document.getElementById('tpl-name').value.trim();
@@ -1461,7 +1461,7 @@ function saveTemplate(){
   }
   save();closeModal();renderDocs();showToast('✅ Шаблон збережено');
 }
- 
+
 function editTemplate(id){
   initTemplates();
   const t=S.templates.find(x=>x.id===id);
@@ -1474,44 +1474,44 @@ function editTemplate(id){
   ['case','client','event','payment','template','gendoc','restore'].forEach(x=>
     document.getElementById('modal-'+x).style.display=x==='template'?'block':'none');
 }
- 
+
 function delTemplate(id){
   initTemplates();
   S.templates=S.templates.filter(t=>t.id!==id);
   save();renderDocs();showToast('🗑 Шаблон видалено');
 }
- 
+
 function quickGen(tplId){
   openModal('gendoc');
   const sel=document.getElementById('gen-tpl');
   if(sel)sel.value=tplId;
 }
- 
+
 function fillGenCase(){
   const clientId=document.getElementById('gen-client').value;
   const cSel=document.getElementById('gen-case');
   const cases=S.cases.filter(c=>c.clientId===clientId);
   cSel.innerHTML='<option value="">— без справи —</option>'+cases.map(c=>`<option value="${c.id}">${c.name}</option>`).join('');
 }
- 
+
 function generateDoc(){
   initTemplates();
   const tplId=document.getElementById('gen-tpl').value;
   const clientId=document.getElementById('gen-client').value;
   const caseId=document.getElementById('gen-case').value;
   const date=document.getElementById('gen-date').value;
- 
+
   if(!tplId){showToast('⚠️ Оберіть шаблон',true);return;}
   if(!clientId){showToast('⚠️ Оберіть клієнта',true);return;}
- 
+
   const tpl=S.templates.find(t=>t.id===tplId);
   const client=S.clients.find(c=>c.id===clientId);
   const cas=caseId?S.cases.find(c=>c.id===caseId):null;
- 
+
   if(!tpl||!client)return;
- 
+
   const dateStr=date?new Date(date+'T00:00:00').toLocaleDateString('uk-UA'):new Date().toLocaleDateString('uk-UA');
- 
+
   let text=tpl.body
     .replace(/{{ПІБ}}/g,client.name||'')
     .replace(/{{ТЕЛЕФОН}}/g,client.phone||'')
@@ -1521,7 +1521,7 @@ function generateDoc(){
     .replace(/{{СПРАВА}}/g,cas?cas.name:'')
     .replace(/{{СУД}}/g,cas?cas.court||'':'')
     .replace(/{{ДАТА}}/g,dateStr);
- 
+
   document.getElementById('doc-preview').textContent=text;
   document.getElementById('doc-preview-section').style.display='block';
   document.getElementById('doc-preview-section').dataset.filename=`${tpl.name}_${client.name}_${dateStr}`;
@@ -1530,7 +1530,7 @@ function generateDoc(){
   document.getElementById('doc-preview-section').scrollIntoView({behavior:'smooth'});
   showToast('✅ Документ згенеровано!');
 }
- 
+
 function downloadDoc(){
   const sec=document.getElementById('doc-preview-section');
   const text=sec.dataset.text||document.getElementById('doc-preview').textContent;
@@ -1541,29 +1541,29 @@ function downloadDoc(){
   URL.revokeObjectURL(url);
   showToast('⬇️ Документ завантажено!');
 }
- 
+
 function copyDoc(){
   const text=document.getElementById('doc-preview').textContent;
   navigator.clipboard.writeText(text).then(()=>showToast('📋 Скопійовано!')).catch(()=>showToast('Виділіть текст і скопіюйте вручну'));
 }
- 
- 
+
+
 // ── EXCEL IMPORT ─────────────────────────────────────────────
 function importFromExcel(input, type){
   const file = input.files[0];
   if(!file){ return; }
- 
+
   const reader = new FileReader();
   reader.onload = function(e){
     try{
       const wb = XLSX.read(e.target.result, {type:'binary'});
       const ws = wb.Sheets[wb.SheetNames[0]];
       const rows = XLSX.utils.sheet_to_json(ws, {defval:''});
- 
+
       if(!rows.length){ showToast('⚠️ Файл порожній або невірний формат', true); return; }
- 
+
       let added = 0;
- 
+
       if(type === 'clients'){
         rows.forEach(r => {
           // flexible column matching — підтримує різні назви колонок
@@ -1586,7 +1586,7 @@ function importFromExcel(input, type){
         save(); maybeAutoSync(); renderClients(); renderDashboard();
         showToast(`✅ Імпортовано ${added} клієнтів!`);
       }
- 
+
       else if(type === 'cases'){
         rows.forEach(r => {
           const name = r['Назва'] || r['Справа'] || r['Name'] || Object.values(r)[1] || Object.values(r)[0] || '';
@@ -1612,7 +1612,7 @@ function importFromExcel(input, type){
         save(); maybeAutoSync(); renderCases(); renderDashboard();
         showToast(`✅ Імпортовано ${added} справ!`);
       }
- 
+
       else if(type === 'payments'){
         rows.forEach(r => {
           const amount = parseFloat(String(r['Сума'] || r['Amount'] || r['Сума (₴)'] || 0).replace(/[^0-9.]/g,'')) || 0;
@@ -1631,14 +1631,14 @@ function importFromExcel(input, type){
         save(); maybeAutoSync(); renderFinance(); renderDashboard();
         showToast(`✅ Імпортовано ${added} платежів!`);
       }
- 
+
       if(added === 0){
         showToast('⚠️ Не знайдено нових записів. Перевірте назви колонок.', true);
         // show what columns were found
         const cols = Object.keys(rows[0] || {}).join(', ');
         setTimeout(() => showToast(`Знайдені колонки: ${cols}`, true), 1000);
       }
- 
+
     } catch(err){
       showToast('❌ Помилка читання файлу: ' + err.message, true);
     }
@@ -1647,16 +1647,16 @@ function importFromExcel(input, type){
   };
   reader.readAsBinaryString(file);
 }
- 
+
 // ── EDIT CASE & CLIENT ──────────────────────────────────────
 let editingCaseId = null;
 let editingClientId = null;
- 
+
 function openEditCase(caseId){
   const c = S.cases.find(x=>x.id===caseId);
   if(!c) return;
   editingCaseId = caseId;
- 
+
   // populate fields
   document.getElementById('ec-num').value = c.num||'';
   document.getElementById('ec-name').value = c.name||'';
@@ -1665,26 +1665,26 @@ function openEditCase(caseId){
   document.getElementById('ec-status').value = c.status||'Активна';
   document.getElementById('ec-date').value = c.date||'';
   document.getElementById('ec-notes').value = c.notes||'';
- 
+
   // populate client select
   const sel = document.getElementById('ec-client');
   sel.innerHTML = '<option value="">— оберіть із існуючих —</option>' +
     S.clients.map(cl=>`<option value="${cl.id}"${cl.id===c.clientId?' selected':''}>${cl.name}</option>`).join('');
   document.getElementById('ec-client-new').value='';
- 
+
   // open modal
   document.getElementById('modal-overlay').classList.add('open');
   ['case','client','event','payment','template','gendoc','restore','case-detail','edit-case','edit-client']
     .forEach(t=>{const el=document.getElementById('modal-'+t);if(el)el.style.display=t==='edit-case'?'block':'none';});
 }
- 
+
 function saveEditCase(){
   const c = S.cases.find(x=>x.id===editingCaseId);
   if(!c) return;
- 
+
   const name = document.getElementById('ec-name').value.trim();
   if(!name){ showToast('⚠️ Введіть назву справи', true); return; }
- 
+
   c.num    = document.getElementById('ec-num').value.trim() || c.num;
   c.name   = name;
   c.cat    = document.getElementById('ec-cat').value;
@@ -1692,7 +1692,7 @@ function saveEditCase(){
   c.status = document.getElementById('ec-status').value;
   c.date   = document.getElementById('ec-date').value;
   c.notes  = document.getElementById('ec-notes').value.trim();
- 
+
   // handle new client typed manually
   const newClientName = document.getElementById('ec-client-new').value.trim();
   if(newClientName){
@@ -1707,22 +1707,22 @@ function saveEditCase(){
   } else {
     c.clientId = document.getElementById('ec-client').value;
   }
- 
+
   // journal entry
   if(!c.journal) c.journal=[];
   c.journal.unshift({id:uid(),type:'note',text:'Дані справи оновлено',date:new Date().toISOString(),auto:true});
- 
+
   save(); maybeAutoSync();
   closeModal();
   renderCases();
   showToast('✅ Справу оновлено');
 }
- 
+
 function openEditClient(clientId){
   const cl = S.clients.find(x=>x.id===clientId);
   if(!cl) return;
   editingClientId = clientId;
- 
+
   document.getElementById('ecl-name').value  = cl.name||'';
   document.getElementById('ecl-phone').value = cl.phone||'';
   document.getElementById('ecl-email').value = cl.email||'';
@@ -1730,19 +1730,19 @@ function openEditClient(clientId){
   document.getElementById('ecl-code').value  = cl.code||'';
   document.getElementById('ecl-addr').value  = cl.addr||'';
   document.getElementById('ecl-notes').value = cl.notes||'';
- 
+
   document.getElementById('modal-overlay').classList.add('open');
   ['case','client','event','payment','template','gendoc','restore','case-detail','edit-case','edit-client']
     .forEach(t=>{const el=document.getElementById('modal-'+t);if(el)el.style.display=t==='edit-client'?'block':'none';});
 }
- 
+
 function saveEditClient(){
   const cl = S.clients.find(x=>x.id===editingClientId);
   if(!cl) return;
- 
+
   const name = document.getElementById('ecl-name').value.trim();
   if(!name){ showToast('⚠️ Введіть ПІБ', true); return; }
- 
+
   cl.name  = name;
   cl.phone = document.getElementById('ecl-phone').value.trim();
   cl.email = document.getElementById('ecl-email').value.trim();
@@ -1750,13 +1750,13 @@ function saveEditClient(){
   cl.code  = document.getElementById('ecl-code').value.trim();
   cl.addr  = document.getElementById('ecl-addr').value.trim();
   cl.notes = document.getElementById('ecl-notes').value.trim();
- 
+
   save(); maybeAutoSync();
   closeModal();
   renderClients();
   showToast('✅ Клієнта оновлено');
 }
- 
+
 // ── DOCUMENTS IN CASES ──────────────────────────────────────
 function toggleDocForm(){
   const f = document.getElementById('cd-doc-form');
@@ -1770,32 +1770,32 @@ function toggleDocForm(){
     document.getElementById('doc-name').focus();
   }
 }
- 
+
 function saveDoc(){
   const name = document.getElementById('doc-name').value.trim();
   const url  = document.getElementById('doc-url').value.trim();
   const type = document.getElementById('doc-type').value;
- 
+
   if(!name){ showToast('⚠️ Введіть назву документу', true); return; }
   if(!url)  { showToast('⚠️ Введіть посилання', true); return; }
   if(!url.startsWith('http')){ showToast('⚠️ Посилання має починатись з https://', true); return; }
- 
+
   const c = S.cases.find(x=>x.id===currentCaseId);
   if(!c) return;
   if(!c.docs) c.docs = [];
- 
+
   c.docs.push({ id: uid(), name, url, type, date: new Date().toISOString() });
   save(); maybeAutoSync();
   renderCaseDocs(c);
   toggleDocForm();
- 
+
   // also add journal entry
   if(!c.journal) c.journal = [];
   c.journal.unshift({ id: uid(), type:'doc', text:`Додано документ: ${name}`, date: new Date().toISOString(), auto: true });
   renderJournal(c);
   showToast('📎 Документ додано!');
 }
- 
+
 function delDoc(docId){
   const c = S.cases.find(x=>x.id===currentCaseId);
   if(!c||!c.docs) return;
@@ -1810,9 +1810,9 @@ function delDoc(docId){
   }
   showToast('🗑 Документ видалено');
 }
- 
+
 const DOC_ICONS = { pdf:'📄', word:'📝', scan:'🖨', photo:'📷', other:'📎' };
- 
+
 function renderCaseDocs(c){
   const el = document.getElementById('cd-docs');
   if(!el) return;
@@ -1840,11 +1840,11 @@ function renderCaseDocs(c){
     </div>`;
   }).join('');
 }
- 
+
 // ── ANALYTICS ────────────────────────────────────────────────
 function renderAnalytics(){
   const now = new Date();
- 
+
   // populate year selector
   const yearSel = document.getElementById('an-year');
   if(yearSel){
@@ -1854,9 +1854,9 @@ function renderAnalytics(){
     const curYear = yearSel.value || String(now.getFullYear());
     yearSel.innerHTML = years.map(y=>`<option value="${y}"${y===curYear?' selected':''}>${y}</option>`).join('');
   }
- 
+
   const selYear = parseInt(document.getElementById('an-year')?.value || now.getFullYear());
- 
+
   // ── TOP STATS ──
   const totalIncome = S.payments.filter(p=>p.status==='Оплачено').reduce((s,p)=>s+(+p.amount||0),0);
   const pending = S.payments.filter(p=>p.status==='Не оплачено').reduce((s,p)=>s+(+p.amount||0),0);
@@ -1866,7 +1866,7 @@ function renderAnalytics(){
     const d=new Date(p.date+'T00:00:00');
     return d.getMonth()===now.getMonth()&&d.getFullYear()===now.getFullYear();
   }).reduce((s,p)=>s+(+p.amount||0),0);
- 
+
   const statsEl = document.getElementById('an-stats');
   if(statsEl) statsEl.innerHTML = [
     {label:'Загальний дохід',val:fmt(totalIncome)+'₴',color:'var(--green)',note:'оплачено'},
@@ -1878,7 +1878,7 @@ function renderAnalytics(){
     <div style="font-size:26px;font-weight:700;color:${s.color};letter-spacing:-.5px">${s.val}</div>
     <div style="font-size:11px;color:var(--text-dim);margin-top:4px">${s.note}</div>
   </div>`).join('');
- 
+
   // ── MONTHLY BAR CHART ──
   const MONTH_NAMES = ['Січ','Лют','Бер','Кві','Тра','Чер','Лип','Сер','Вер','Жов','Лис','Гру'];
   const monthlyPaid = Array(12).fill(0);
@@ -1891,20 +1891,20 @@ function renderAnalytics(){
     if(p.status==='Оплачено') monthlyPaid[m]+=(+p.amount||0);
     else monthlyUnpaid[m]+=(+p.amount||0);
   });
- 
+
   const canvas = document.getElementById('chart-monthly');
   if(canvas){
     const ctx = canvas.getContext('2d');
     const W = canvas.offsetWidth || canvas.parentElement.offsetWidth - 32;
     canvas.width = W; canvas.height = 200;
     ctx.clearRect(0,0,W,200);
- 
+
     const maxVal = Math.max(...monthlyPaid.map((v,i)=>v+monthlyUnpaid[i]), 1);
     const padL=40, padR=10, padT=10, padB=30;
     const chartW = W-padL-padR;
     const chartH = 200-padT-padB;
     const barW = chartW/12;
- 
+
     // grid lines
     ctx.strokeStyle='rgba(0,0,0,0.06)'; ctx.lineWidth=1;
     for(let i=0;i<=4;i++){
@@ -1913,14 +1913,14 @@ function renderAnalytics(){
       ctx.fillStyle='rgba(0,0,0,0.3)'; ctx.font='10px Inter,sans-serif'; ctx.textAlign='right';
       ctx.fillText(fmt(Math.round(maxVal/4*i)), padL-4, y+3);
     }
- 
+
     // bars
     for(let m=0;m<12;m++){
       const x = padL + m*barW + barW*0.1;
       const bw = barW*0.8;
       const paidH = (monthlyPaid[m]/maxVal)*chartH;
       const unpaidH = (monthlyUnpaid[m]/maxVal)*chartH;
- 
+
       // paid bar
       if(paidH>0){
         ctx.fillStyle='#2d7a5c';
@@ -1937,12 +1937,12 @@ function renderAnalytics(){
         ctx.roundRect(x+bw/2, y, bw/2, unpaidH, [3,3,0,0]);
         ctx.fill();
       }
- 
+
       // month label
       ctx.fillStyle='rgba(0,0,0,0.45)'; ctx.font='10px Inter,sans-serif'; ctx.textAlign='center';
       ctx.fillText(MONTH_NAMES[m], padL+m*barW+barW/2, 200-padB+14);
     }
- 
+
     // legend
     ctx.fillStyle='#2d7a5c'; ctx.fillRect(padL, 4, 10, 8);
     ctx.fillStyle='rgba(0,0,0,0.5)'; ctx.font='10px Inter,sans-serif'; ctx.textAlign='left';
@@ -1951,19 +1951,19 @@ function renderAnalytics(){
     ctx.fillStyle='rgba(0,0,0,0.5)';
     ctx.fillText('Не оплачено', padL+94, 12);
   }
- 
+
   // ── CATEGORIES PIE ──
   const catCounts = {};
   S.cases.forEach(c=>{ catCounts[c.cat]=(catCounts[c.cat]||0)+1; });
   drawPie('chart-cats','chart-cats-legend',catCounts,['#2d5fa0','#b83232','#9a6f2e','#2d7a5c','#7a5ca0','#5c8a7a']);
- 
+
   // ── PAYMENT STATUS PIE ──
   const payStatus = {'Оплачено':0,'Не оплачено':0};
   S.payments.forEach(p=>{ payStatus[p.status]=(payStatus[p.status]||0)+(+p.amount||0); });
   drawPie('chart-payments','chart-payments-legend',
     {'Оплачено ₴':payStatus['Оплачено'],'Очікується ₴':payStatus['Не оплачено']},
     ['#2d7a5c','#b83232']);
- 
+
   // ── TOP CLIENTS ──
   const clientIncome = {};
   S.payments.filter(p=>p.status==='Оплачено').forEach(p=>{
@@ -1986,7 +1986,7 @@ function renderAnalytics(){
       </div>
     </div>`;
   }).join('') : '<div style="padding:20px;text-align:center;color:var(--text-dim);font-size:13px">Немає даних</div>';
- 
+
   // ── MONTHLY TABLE ──
   const tbEl = document.getElementById('an-monthly-table');
   if(tbEl){
@@ -1999,7 +1999,7 @@ function renderAnalytics(){
       }).length;
       return {name,paid,unpaid,total,cnt};
     }).filter(r=>r.total>0);
- 
+
     tbEl.innerHTML = rows.length ? rows.map(r=>`<tr>
       <td style="font-weight:500">${r.name} ${selYear}</td>
       <td style="color:var(--green);font-weight:600">${fmt(r.paid)}₴</td>
@@ -2015,14 +2015,14 @@ function renderAnalytics(){
     </tr>` : '<tr><td colspan="5" style="text-align:center;color:var(--text-dim);padding:24px">Немає платежів за цей рік</td></tr>';
   }
 }
- 
+
 function drawPie(canvasId, legendId, data, colors){
   const canvas = document.getElementById(canvasId);
   const legendEl = document.getElementById(legendId);
   if(!canvas) return;
   const ctx = canvas.getContext('2d');
   ctx.clearRect(0,0,160,160);
- 
+
   const entries = Object.entries(data).filter(([k,v])=>v>0);
   const total = entries.reduce((s,[,v])=>s+v,0);
   if(!total){
@@ -2031,7 +2031,7 @@ function drawPie(canvasId, legendId, data, colors){
     if(legendEl) legendEl.innerHTML='<span style="color:var(--text-dim)">Немає даних</span>';
     return;
   }
- 
+
   let angle = -Math.PI/2;
   entries.forEach(([label,val],i)=>{
     const slice = (val/total)*Math.PI*2;
@@ -2044,12 +2044,12 @@ function drawPie(canvasId, legendId, data, colors){
     ctx.strokeStyle='#fff'; ctx.lineWidth=2; ctx.stroke();
     angle+=slice;
   });
- 
+
   // donut hole
   ctx.beginPath(); ctx.arc(80,80,35,0,Math.PI*2);
   ctx.fillStyle=getComputedStyle(document.documentElement).getPropertyValue('--surface')||'#fff';
   ctx.fill();
- 
+
   if(legendEl) legendEl.innerHTML = entries.map(([label,val],i)=>`
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
       <div style="width:10px;height:10px;border-radius:50%;background:${colors[i%colors.length]};flex-shrink:0"></div>
@@ -2060,7 +2060,7 @@ function drawPie(canvasId, legendId, data, colors){
     </div>
   `).join('');
 }
- 
+
 // ── CASE DETAIL: STEPS & JOURNAL ────────────────────────────
 const CASE_STEPS = [
   {id:'consult', label:'Консультація'},
@@ -2071,33 +2071,33 @@ const CASE_STEPS = [
   {id:'decision', label:'Рішення'},
   {id:'closed', label:'Закрито'},
 ];
- 
+
 const JOURNAL_TYPES = {
   call:{icon:'📞',label:'Дзвінок',cls:'type-call'},
   doc:{icon:'📄',label:'Документ',cls:'type-doc'},
   court:{icon:'⚖️',label:'Засідання',cls:'type-court'},
   note:{icon:'✏️',label:'Нотатка',cls:'type-note'},
 };
- 
+
 let currentCaseId = null;
 let pendingJournalType = null;
- 
+
 function openCaseDetail(caseId){
   const c = S.cases.find(x=>x.id===caseId);
   if(!c) return;
   currentCaseId = caseId;
   if(!c.step) c.step = 'consult';
   if(!c.journal) c.journal = [];
- 
+
   const cl = S.clients.find(x=>x.id===c.clientId);
- 
+
   // title & meta
   document.getElementById('cd-title').textContent = c.name;
   document.getElementById('cd-meta').textContent = `${c.num} · ${cl?cl.name:'—'} · ${c.cat} · ${c.court||''}`;
- 
+
   // steps
   renderCaseSteps(c);
- 
+
   // info
   document.getElementById('cd-info').innerHTML = `
     <div><span style="color:var(--text-dim)">Клієнт:</span> <strong>${cl?cl.name:'—'}</strong></div>
@@ -2107,7 +2107,7 @@ function openCaseDetail(caseId){
     <div><span style="color:var(--text-dim)">Відкрито:</span> ${fmtD(c.date)}</div>
     ${c.notes?`<div style="margin-top:8px;padding-top:8px;border-top:1px solid var(--border);color:var(--text-dim);font-size:12px">${c.notes}</div>`:''}
   `;
- 
+
   // upcoming events for this case
   const t = td();
   const caseEvs = S.events.filter(e=>e.caseId===caseId&&e.date>=t).sort((a,b)=>a.date.localeCompare(b.date)).slice(0,3);
@@ -2118,17 +2118,17 @@ function openCaseDetail(caseId){
       <span style="float:right">${daysLeftBadge(daysLeft(e.date))}</span>
     </div>
   `).join('') : '<div style="padding:12px 14px;color:var(--text-dim);font-size:12px">Подій немає</div>';
- 
+
   // journal
   renderJournal(c);
- 
+
   // docs
   renderCaseDocs(c);
- 
+
   // hide journal form
   document.getElementById('cd-journal-form').style.display='none';
   document.getElementById('cd-journal-text').value='';
- 
+
   // open modal
   document.getElementById('modal-overlay').classList.add('open');
   ['case','client','event','payment','template','gendoc','restore','case-detail'].forEach(t=>{
@@ -2136,7 +2136,7 @@ function openCaseDetail(caseId){
     if(el)el.style.display=t==='case-detail'?'block':'none';
   });
 }
- 
+
 function renderCaseSteps(c){
   const stepIdx = CASE_STEPS.findIndex(s=>s.id===c.step);
   let html = '<div class="steps-bar">';
@@ -2155,7 +2155,7 @@ function renderCaseSteps(c){
   html += '</div>';
   document.getElementById('cd-steps').innerHTML = html;
 }
- 
+
 function setCaseStep(stepId){
   const c = S.cases.find(x=>x.id===currentCaseId);
   if(!c) return;
@@ -2170,7 +2170,7 @@ function setCaseStep(stepId){
   renderCases();
   showToast(`✅ Етап: ${stepLabel}`);
 }
- 
+
 function renderJournal(c){
   const el = document.getElementById('cd-journal');
   if(!c.journal||!c.journal.length){
@@ -2193,7 +2193,7 @@ function renderJournal(c){
     </div>`;
   }).join('');
 }
- 
+
 function addJournalEntry(type){
   pendingJournalType = type;
   const t = JOURNAL_TYPES[type];
@@ -2201,7 +2201,7 @@ function addJournalEntry(type){
   document.getElementById('cd-journal-form').style.display='block';
   document.getElementById('cd-journal-text').focus();
 }
- 
+
 function saveJournalEntry(){
   const text = document.getElementById('cd-journal-text').value.trim();
   if(!text){showToast('⚠️ Введіть текст',true);return;}
@@ -2215,7 +2215,7 @@ function saveJournalEntry(){
   document.getElementById('cd-journal-text').value='';
   showToast('✅ Запис додано');
 }
- 
+
 function delJournalEntry(entryId){
   const c = S.cases.find(x=>x.id===currentCaseId);
   if(!c||!c.journal) return;
@@ -2224,15 +2224,15 @@ function delJournalEntry(entryId){
   renderJournal(c);
   showToast('🗑 Запис видалено');
 }
- 
+
 // ── GLOBAL SEARCH ───────────────────────────────────────────
 function globalSearch(){
   const q=(document.getElementById('global-search').value||'').trim().toLowerCase();
   const box=document.getElementById('search-results');
   if(!q){box.style.display='none';return;}
- 
+
   const results=[];
- 
+
   // clients
   S.clients.filter(c=>c.name.toLowerCase().includes(q)||
     (c.phone&&c.phone.includes(q))||(c.email&&c.email.toLowerCase().includes(q)))
@@ -2240,7 +2240,7 @@ function globalSearch(){
       const cnt=S.cases.filter(x=>x.clientId===c.id).length;
       results.push({icon:'👤',label:c.name,sub:`${c.type||'Клієнт'} · ${cnt} справ`,action:`goTo('clients')`});
     });
- 
+
   // cases
   S.cases.filter(c=>c.name.toLowerCase().includes(q)||
     c.num.toLowerCase().includes(q)||(c.court&&c.court.toLowerCase().includes(q)))
@@ -2248,25 +2248,25 @@ function globalSearch(){
       const cl=S.clients.find(x=>x.id===c.clientId);
       results.push({icon:'📁',label:c.name,sub:`${c.num} · ${cl?cl.name:'—'} · ${c.status}`,action:`goTo('cases')`});
     });
- 
+
   // events
   S.events.filter(e=>e.name.toLowerCase().includes(q)||(e.notes&&e.notes.toLowerCase().includes(q)))
     .slice(0,3).forEach(e=>{
       const c=S.cases.find(x=>x.id===e.caseId);
       results.push({icon:'📅',label:e.name,sub:`${fmtD(e.date)}${e.time?' о '+e.time:''} · ${c?c.name:e.type}`,action:`goTo('calendar')`});
     });
- 
+
   // payments
   S.payments.filter(p=>p.desc&&p.desc.toLowerCase().includes(q))
     .slice(0,2).forEach(p=>{
       const cl=S.clients.find(c=>c.id===p.clientId);
       results.push({icon:'₴',label:p.desc,sub:`${fmt(p.amount)}₴ · ${cl?cl.name:'—'} · ${p.status}`,action:`goTo('finance')`});
     });
- 
+
   if(!results.length){
     box.innerHTML=`<div style="padding:16px 14px;font-size:13px;color:var(--text-dim)">Нічого не знайдено</div>`;
     box.style.display='block';
- 
+
     // position under input
     const inp=document.getElementById('global-search');
     const rect=inp.getBoundingClientRect();
@@ -2275,7 +2275,7 @@ function globalSearch(){
     box.style.width=rect.width+'px';
     return;
   }
- 
+
   box.innerHTML=results.map((r,i)=>`
     <div onclick="${r.action};clearSearch()" style="display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;border-bottom:1px solid var(--border);transition:background .12s" 
       onmouseover="this.style.background='var(--surface2)'" onmouseout="this.style.background=''">
@@ -2285,7 +2285,7 @@ function globalSearch(){
         <div style="font-size:11px;color:var(--text-dim);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${r.sub}</div>
       </div>
     </div>`).join('');
- 
+
   box.style.display='block';
   const inp=document.getElementById('global-search');
   const rect=inp.getBoundingClientRect();
@@ -2293,12 +2293,12 @@ function globalSearch(){
   box.style.left=rect.left+'px';
   box.style.width=(rect.width+40)+'px';
 }
- 
+
 function clearSearch(){
   document.getElementById('global-search').value='';
   document.getElementById('search-results').style.display='none';
 }
- 
+
 // close search on click outside
 document.addEventListener('click',e=>{
   if(!e.target.closest('#global-search')&&!e.target.closest('#search-results'))
@@ -2307,7 +2307,7 @@ document.addEventListener('click',e=>{
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape')clearSearch();
 });
- 
+
 // INIT
 load();
 // Always use this Sheets URL
